@@ -1,19 +1,34 @@
-# dz-classes
+[![Build status](https://travis-ci.org/Anton17848/dz-classes.svg?branch=master)](https://travis-ci.org/Anton17848/dz-classes)
 
-npm init
+# Домашнее задание к лекции «Классы, наследование»
 
-"@babel/cli": => npm install --save-dev @babel/cli
-"@babel/core": => npm install --save-dev
-"@babel/preset-env": => npm install --save-dev
-"@types/jest": => npm install --save-dev
-"babel-loader": => npm install --save-dev
- + "css-loader": => npm install --save-dev css-loader
-"eslint": => npm install --save-dev
-"eslint-plugin-jest": => npm install --save-dev
- + "html-loader": => npm install --save-dev html-loader
- + "html-webpack-plugin": => npm install --save-dev npm install html-webpack-plugin
- + "jest": => npm install --save-dev jest
- + "style-loader": => npm install --save-dev style-loader
- + "webpack": => npm install --save-dev webpack 
- + "webpack-cli": => npm install --save-dev webpack-cli 
- + "webpack-dev-server": => npm install --save-dev webpack-dev-server 
+**Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
+
+**Важно**: код должен проходить ESLint без ошибок.
+
+**Важно**: тесты должны обеспечивать 100% покрытие тестируемых функций по строкам.
+
+**Важно**: решения должны быть построены на базе [шаблона Webpack](/ci-template).
+
+В личном кабинете на сайте [netology.ru](http://netology.ru/) в поле комментария к домашней работе вставьте ссылки на ваш GitHub-проекты.
+
+---
+
+## Методы
+
+### Легенда
+
+Поскольку вы создавали классы для того, чтобы хранить в одном месте свойства объекта и его поведение, то пришла пора реализовать соответствующие методы.
+
+#### Описание
+
+Реализуйте в классе `Character` метод `levelUp`, который работает следующим образом:
+1. На 1 повышает поле `level`;
+1. На 20% повышает показатели `attack` и `defence`;
+1. Приводит показатель `health` к значению 100.
+
+Метод должен работать только если показатель жизни не равен 0. В противном случае генерируется ошибка (нельзя повысить левел умершего).
+
+Реализуйте в класса `Character` метод `damage(points)`, который меняет внутреннее состояние объекта (`points` -  это урон, наносимый персонажу). Метод `damage(points)` ничего не возвращает и рассчитывает итоговое изменение жизни персонажа (`health`) по формуле: `health -= points * (1 - defence / 100)`, учитывая, что значение `health >= 0`.
+
+Не забудьте написать unit-тесты, которые обеспечивают 100% покрытие функций и классов, которые вы тестируете.
